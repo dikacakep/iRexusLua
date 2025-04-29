@@ -1,0 +1,63 @@
+local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/jensonhirst/Orion/main/source"))()
+
+-- Menampilkan notifikasi Loading
+OrionLib:MakeNotification({
+    Name = "iRexus Lua Loading...",
+    Content = "Harap tunggu sebentar",
+    Image = "rbxassetid://106256255289687",
+    Time = 3
+})
+
+wait(3)
+
+-- Membuat Window dengan Logo dan animasi Intro
+local Window = OrionLib:MakeWindow({
+    Name = "iRexus Lua | Script Hub",
+    HidePremium = false,
+    SaveConfig = true,
+    ConfigFolder = "iRexusLua",
+    IntroEnabled = true,
+    IntroText = "iRexus LuaHub",
+    IntroIcon = "rbxassetid://106256255289687",  -- Logo untuk Intro
+    Dragable = true  -- Menambahkan fitur dragable agar bisa digeser di layar
+})
+
+-- Tab Universal Scripts
+local UniversalTab = Window:MakeTab({
+    Name = "Universal Scripts",
+    Icon = "rbxassetid://106256255289687",  -- Ganti dengan logo yang kamu inginkan
+    PremiumOnly = false
+})
+
+UniversalTab:AddButton({
+    Name = "Infinity Yield",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
+    end
+})
+
+
+-- Tab Game Specific Scripts
+local GameTab = Window:MakeTab({
+    Name = "Game Scripts",
+    Icon = "rbxassetid://106256255289687",  -- Ganti dengan logo yang kamu inginkan
+    PremiumOnly = false
+})
+
+GameTab:AddButton({
+    Name = "Fisch [Native]",
+    Callback = function()
+        script_key="";
+        (loadstring or load)(game:HttpGet("https://getnative.cc/script/loader"))()
+    end
+})
+
+GameTab:AddButton({
+    Name = "Blade Ball [Ronix]",
+    Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/79ab2d3174641622d317f9e234797acb.lua"))()
+    end
+})
+
+-- Menyimpan dan memuat konfigurasi
+OrionLib:Init()
