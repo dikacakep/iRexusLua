@@ -21,5 +21,18 @@ iRexusUni:AddButton({
         loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
   	end    
 })
+local GameTab = Window:MakeTab({
+	Name = "Game Scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+GameTab:AddButton({
+	Name = "Blade Ball",
+	Callback = function()
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/79ab2d3174641622d317f9e234797acb.lua"))()
+  	end    
+})
 
 OrionLib:Init()
+OrionLib:Destroy()
