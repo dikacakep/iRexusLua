@@ -35,4 +35,3 @@ GameTab:AddButton({
 })
 
 OrionLib:Init()
-OrionLib:Destroy()
